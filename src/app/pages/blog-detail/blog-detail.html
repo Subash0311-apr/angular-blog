@@ -1,0 +1,20 @@
+<section class="blog-detail-container">
+  <div *ngIf="notFound" class="not-found">
+    <h2>Blog Not Found</h2>
+    <p>The blog post you're looking for doesn't exist.</p>
+    <a routerLink="/" class="back-link">Back to Blogs</a>
+  </div>
+
+  <article *ngIf="blog" class="blog-content">
+    <header>
+      <h1>{{ blog.title }}</h1>
+      <p class="blog-date">{{ blog.createdDate | date: 'fullDate' }}</p>
+    </header>
+    <div class="blog-body">
+      <p>{{ blog.content }}</p>
+    </div>
+    <footer>
+      <a routerLink="/" class="back-link">Back to Blogs</a>
+    </footer>
+  </article>
+</section>

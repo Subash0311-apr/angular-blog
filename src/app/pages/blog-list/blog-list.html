@@ -1,0 +1,14 @@
+<section class="blog-list-container">
+  <header>
+    <h1>Blog Posts</h1>
+  </header>
+
+  <div class="blog-posts">
+    <article *ngFor="let blog of blogs" class="blog-card">
+      <h2>{{ blog.title }}</h2>
+      <p class="blog-date">{{ blog.createdDate | date: 'mediumDate' }}</p>
+      <p class="blog-summary">{{ blog.summary }}</p>
+      <a [routerLink]="['/blog', blog.id]" class="read-more-link">Read More</a>
+    </article>
+  </div>
+</section>
